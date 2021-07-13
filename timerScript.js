@@ -3,6 +3,7 @@ let min = 0,
   sec = 0,
   millsec = 0;
 let timerIntervalClock; // Timer object
+let lapArray = [];
 
 const hideAllElements = () =>{
   document.getElementById("startTimer").style.display = "none";
@@ -29,7 +30,19 @@ const startTimer = function () {
       sec = 0;
       min += 1;
     }
-    document.getElementById("timerClock").innerHTML = `${min}:${sec}:${millsec
+    let disMin=min, disSec=sec, disMilliSec=millsec;
+    if(min <10){
+      disMin = `0${min}`;
+    }
+    if(sec <10){
+      disSec = `0${sec}`;
+    }
+    if(millsec < 10){
+      disMilliSec = `00${millsec}`
+    }else if(millsec < 100){
+      disMilliSec = `0${millsec}`;
+    }
+    document.getElementById("timerClock").innerHTML = `${disMin}:${disSec}:${disMilliSec
       .toString()
       .slice(0, 2)}`;
   }, 10);
@@ -44,6 +57,7 @@ const pauseTimer = function () {
 
 //Reset timer
 const resetTimer = function () {
+   lapArray = [];
   hideAllElements();
   document.getElementById("startTimer").style.display = "inline";
   document.getElementById("displayLap").innerHTML = "";
@@ -56,12 +70,11 @@ const resetTimer = function () {
 const resumeTimer = () => startTimer();
 
 // Take lap
-const lapArray = [];
 const takeLap = () => {
   lapArray.push(`${min}:${sec}:${millsec.toString().slice(0, 2)}`);
   let displayLap = "";
   for (let i = 0; i < lapArray.length; i++) {
-    displayLap += `<li>${i + 1}  ||  ${lapArray[i]}</li>`;
+    displayLap += `<li><span style="color:white">${i + 1}  ||  ${lapArray[i]}</span></li>`;
   }
   document.getElementById("displayLap").innerHTML = displayLap;
 };
@@ -71,3 +84,5 @@ document.getElementById("pauseTimer").addEventListener("click", pauseTimer);
 document.getElementById("resumeTimer").addEventListener("click", resumeTimer);
 document.getElementById("reset").addEventListener("click", resetTimer);
 document.getElementById("lap").addEventListener("click", takeLap);
+
+

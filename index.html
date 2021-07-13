@@ -6,27 +6,28 @@
 </head>
 
 <body onload="openHome()">
-    <div class="topnav">
-        <a class="active" id="home" href="#home">Home</a>
-        <a href="#clock" id="clock">Clock</a>
-        <a href="#contact" id="timer">Timer</a>
-        <a href="#about">About</a>
-    </div>
+    <div>
+        <div class="topnav">
+            <a class="active tab" id="home" href="#home">Home</a>
+            <a href="#clock" class="tab" id="clock">Clock</a>
+            <a href="#clock" class="tab" id="timer">Timer</a>
+            <a href="#clock" class="tab">About</a>
+        </div>
 
-    <div id="displayClock"></div>
-    <!--Clock-->
-    <div id="displayTimer">
-        <p id="timerClock"></p><br>
-        <button id="startTimer">Start</button>
-        <button id="resumeTimer">Resume</button>
-        <button id="pauseTimer">Pause</button>
-        <button id="lap">Lap</button>
-        <button id="reset">Reset</button>
-        <br />
-        <p id="displayLap"></p>
+        <div id="displayClock" class="clock tab-desc"></div>
+        <!--Clock-->
+        <div id="displayTimer" class="timer tab-desc">
+            <div id="timerClock"></div><br>
+            <image src="play.svg" width="50" height="50" id="startTimer"></image>
+            <image src="play.svg" width="50" height="50" id="resumeTimer"></image>
+            <image src="pause.svg" width="50" height="50" id="pauseTimer"></image>
+            <image src="flag1.png" width="50" height="50" id="lap"></image>
+            <image src="reset.svg" width="50" height="50" id="reset"></image>
+            <br />
+            <p id="displayLap" class="lap tab-desc"></p>
+        </div>
+        <!--Timer-->
     </div>
-    <!--Timer-->
-
 </body>
 
 <script src="script.js"></script>
