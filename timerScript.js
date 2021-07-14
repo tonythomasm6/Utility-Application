@@ -76,6 +76,7 @@ const takeLap = () => {
   for (let i = 0; i < lapArray.length; i++) {
     displayLap += `<li><span style="color:white">${i + 1}  ||  ${lapArray[i]}</span></li>`;
   }
+  document.getElementById("displayLap").style.display='inline';
   document.getElementById("displayLap").innerHTML = displayLap;
 };
 

@@ -3,9 +3,16 @@
 <head>
 
     <link rel="stylesheet" href="style.css">
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script defer src="script.js"></script>
     <script defer src="timerScript.js"></script>
     <script defer src="mapScript.js"></script>
+    <script defer type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 
 </head>
 
@@ -29,12 +36,14 @@
             <image src="flag1.png" width="50" height="50" id="lap"></image>
             <image src="reset.svg" width="50" height="50" id="reset"></image>
             <br />
-            <p id="displayLap" class="lap tab-desc"></p>
+            <p id="displayLap" class="  tab-desc"></p>
         </div>
         <!--Map-->
         <div id="displayMap" class="tab-desc display-map" style="color:white">
 
-            <object type="text/html" data="map.html" class="display-map" onload="loadMap()">
+            <div class='display-map' id='map-div'>
+
+            </div>
         </div>
     </div>
 </body>

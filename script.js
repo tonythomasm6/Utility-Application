@@ -89,6 +89,7 @@ const openMap = (e) =>{
     hideAllTabDescription();
     e.target.classList.add('active');
     document.getElementById("displayMap").style.display='inline';
+    loadMap(); // method in mapScript.js
 };
 
 
