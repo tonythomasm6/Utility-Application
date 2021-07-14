@@ -3,12 +3,15 @@
 //clock
 let timerEle;
 
-const allTabs = document.querySelectorAll('.tab');
+document.getElementById("home").classList.add("active");
+//const allTabs = document.querySelectorAll('.tab');
+const allTabs = document.querySelectorAll(' .topnav a');
 const allTabsDesc = document.querySelectorAll('.tab-desc');
 
 //To loose focus of all tabs
 const looseFocusOfAllTabs = function(){
   allTabs.forEach( (t) =>{t.classList.remove('active') });
+  stopClock();// to stop running clock default
 }
 
 //to hide all description open on clicking tab
@@ -71,24 +74,32 @@ const openTimer = function (event) {
 };
 
 //Home button
-const openHome = function (event) {
+const openHome = function (e) {
   looseFocusOfAllTabs();
   hideAllTabDescription();
-  event.target.classList.add('active');
-  //document.getElementById("home").classList.add("active");
+  //e.target.classList.add('active');
+  document.getElementById("home").classList.add("active");
   //event.target.classList.add("active");
 
 };
 
+//Map button
+const openMap = (e) =>{
+    looseFocusOfAllTabs();
+    hideAllTabDescription();
+    e.target.classList.add('active');
+    document.getElementById("displayMap").style.display='inline';
+};
+
+
 document.getElementById("clock").addEventListener("click", openClock);
 document.getElementById("timer").addEventListener("click", openTimer);
+document.getElementById("home").addEventListener("click", openHome);
+document.getElementById("map").addEventListener("click", openMap);
 //document.querySelector("displayTimer").addEventListener("click", timerClock);
 //To stop clock timer on losing focus
 //document.getElementById("clock").addEventListener("blur", stopClock); // issue that clock stopped even on clicking on clock
-document.getElementById("home").addEventListener("click", openHome);
 
 
-document.getElementById("clock").onclick(function(){
 
-});
 

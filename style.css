@@ -1,5 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
+  margin-top: 0px;
   background-color: #333;
   overflow: hidden;
 }
@@ -69,4 +70,9 @@ body {
   font-family: Orbitron;
   letter-spacing: 4px;
   color:white;
+}
+
+.display-map{
+  width: 99%;
+  height: 99%;
 }
