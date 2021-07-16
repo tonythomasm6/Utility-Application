@@ -15,6 +15,8 @@ const myIcon = L.icon({
 //
 let tagContents = [];
 let map;
+
+
 //function to load the map
 function loadMap(){ 
  if( navigator.geolocation){
